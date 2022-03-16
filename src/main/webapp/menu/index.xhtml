@@ -1,0 +1,50 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+    </h:head>
+    <h:body>
+    <div class="card">
+    <h:form>
+        <p:growl id="message" showDetail="true"/>
+
+        <p:commandButton value="Confirm" action="#{confirmView.confirm}" update="message" styleClass="p-mr-2" icon="pi pi-check">
+            <p:confirm header="Confirmation" message="Are you sure you want to proceed?" icon="pi pi-exclamation-triangle"/>
+        </p:commandButton>
+
+        <p:commandButton value="Delete" action="#{confirmView.delete}" update="message" styleClass="ui-button-danger" icon="pi pi-times">
+            <p:confirm header="Confirmation" message="Do you want to delete this record?" icon="pi pi-info-circle"/>
+        </p:commandButton>
+
+        <p:confirmDialog global="true" showEffect="fade" hideEffect="fade" responsive="true" width="350">
+            <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no ui-button-flat"/>
+            <p:commandButton value="Yes" type="button" styleClass="ui-confirmdialog-yes" />
+        </p:confirmDialog>´
+        
+        <div class="card">
+    <h:form>
+        <p:breadCrumb>
+            <p:menuitem value="Electronics"/>
+            <p:menuitem value="negocio"/>
+            <p:menuitem value="Notebook"/>
+            <p:menuitem value="Accessories"/>
+            <p:menuitem value="Backpacks"/>
+            <p:menuitem value="Item"/>
+        </p:breadCrumb>
+        
+        <div class="p-grid">
+    <div class="p-col-12 p-lg-6 p-xl-4">
+        <div class="card">
+            <p:pieChart model="#{chartJsView.pieModel}" style="width: 100%; height: 500px;"/>
+        </div>
+    </div>
+</div>
+    </h:form>
+</div>
+    </h:form>
+</div>
+  
+    </h:body>
+</html>
