@@ -2,13 +2,21 @@
     xmlns:h="http://java.sun.com/jsf/html"
     xmlns:f="http://java.sun.com/jsf/core"
     xmlns:p="http://primefaces.org/ui">
-
     <h:head>
+    	<link type="text/css" rel="stylesheet" href="../cajas/resources/login.css"/>
+    	
     </h:head>
     <h:body>
-        <h:form>
-        	Usuario :<p:inputText value="${menuMb.mensaje}" id="mensaje"/>
-        	<p:commandButton actionListener="${menuMb.cambiarMensaje()}" value="Cambiar" update="mensaje"/>
-        </h:form>
+    	<div class="login">
+    		<h1>Login</h1>
+	        <form id="login" method="post" action="/cajas/login">
+	        	<p:inputText id="username" name="u" value="#{username}" /> 
+				<p:outputLabel for="@previous" value="Usuario" />
+	        	<p:password id="password" name="p" value="#{password}" feedback="true" inline="true" toggleMask="true" redisplay="true" /> 
+				<p:outputLabel for="@previous" value="Password" />
+				<input type="submit" class="btn btn-primary btn-block btn-large" value="Ingresar por HTML"/>
+				${SPRING_SECURITY_LAST_EXCEPTION.message}
+	        </form>
+        </div>
     </h:body>
 </html>

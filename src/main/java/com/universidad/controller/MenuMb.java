@@ -18,7 +18,7 @@ public class MenuMb {
 	
 	@PostConstruct
 	public void init() {
-		System.out.println("Inicio Menu");
+		
 	}
 
 	public void cambiarMensaje() {

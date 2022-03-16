@@ -3,6 +3,8 @@
  */
 package com.universidad.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -18,7 +20,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class MyAuthenticationProvider implements AuthenticationProvider{
 	
-	private CustomerUserDetailsService userDetailsServices = new CustomerUserDetailsService();
+	@Autowired
+	@Qualifier("customerUserDetailsService")
+	private CustomerUserDetailsService userDetailsServices;
 	
 	@Override
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {

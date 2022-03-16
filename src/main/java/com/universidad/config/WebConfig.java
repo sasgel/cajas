@@ -21,7 +21,7 @@ public class WebConfig {
 		//servletContext.addListener(new HttpSessionEventPublisher());
 		servletContext.setInitParameter("java.faces.STATE_SAVING_METHOD", "client");
 		servletContext.setInitParameter("javax.servlet.jsp.jstl.fmt.localizationContext", "resources.application");
-		servletContext.setInitParameter("primefaces.THEME", "luna-amber");
+		servletContext.setInitParameter("primefaces.THEME", "saga");
 		servletContext.setInitParameter("primefaces.FONT_AWESOME", "true");
 		servletContext.setSessionTimeout(30);
 		

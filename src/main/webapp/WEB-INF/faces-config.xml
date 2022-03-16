@@ -11,5 +11,8 @@
                 org.springframework.web.jsf.el.SpringBeanFacesELResolver
         </el-resolver>
     </application>
+    <lifecycle>
+        <phase-listener>com.universidad.config.FilterListener</phase-listener>
+    </lifecycle>
   
 </faces-config>
