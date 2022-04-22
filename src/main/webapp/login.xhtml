@@ -10,10 +10,10 @@
     	<div class="login">
     		<h1>Login</h1>
 	        <form id="login" method="post" action="/cajas/login">
+	        	<p:outputLabel value="Usuario" />
 	        	<p:inputText id="username" name="u" value="#{username}" /> 
-				<p:outputLabel for="@previous" value="Usuario" />
+				<p:outputLabel value="Password" />
 	        	<p:password id="password" name="p" value="#{password}" feedback="true" inline="true" toggleMask="true" redisplay="true" /> 
-				<p:outputLabel for="@previous" value="Password" />
 				<input type="submit" class="btn btn-primary btn-block btn-large" value="Ingresar por HTML"/>
 				${SPRING_SECURITY_LAST_EXCEPTION.message}
 	        </form>
